@@ -8,14 +8,11 @@ import EditProfileScreen from './src/screens/editProfileScreen';
 import EditProfile from './src/screens/editProfileScreen';
 
 import OnboardingScreen from './src/screens/onboarding';
+import Tags from './src/screens/tags';
+import TagsScreen from './src/screens/tags';
 LogBox.ignoreAllLogs();
 const App = () => {
-
-
-
-  return <MyNavigationContainer />;
-
-
+  return <TagsScreen />;
 };
 
 export default App;
