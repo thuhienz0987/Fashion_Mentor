@@ -20,3 +20,5 @@ export {default as IMG_Image3} from './image3.png';
 export {default as IMG_Image4} from './image4.png';
 export {default as IMG_Image5} from './image5.png';
 export {default as IMG_OpacityBg} from './opacityBg.png';
+export {default as IMG_Back} from './arrow.png';
+export {default as IMG_Edit} from './basileditoutline.png';

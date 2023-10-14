@@ -17,3 +17,5 @@ export {default as IC_EditProfile} from './IC_EditProfile';
 export {default as IC_SettingPrivacy} from './IC_SettingPrivacy';
 export {default as IC_Events} from './IC_Events';
 export {default as IC_Saved} from './IC_Saved';
+export {default as IC_Calendar} from './IC_Calendar';
+export {default as IC_Tick} from './IC_Tick';
