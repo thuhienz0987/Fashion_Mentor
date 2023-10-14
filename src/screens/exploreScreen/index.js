@@ -24,7 +24,6 @@ import Comment from './component/comment';
 const ExploreScreen = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isComment, setIsComment] = useState(false);
-  const [isFavor, setIsFavor] = useState(false);
 
   const data = [
     {

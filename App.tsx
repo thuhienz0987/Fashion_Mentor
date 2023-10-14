@@ -6,11 +6,12 @@ import HomeScreen from './src/screens/homeScreen';
 import {LogBox} from 'react-native';
 
 import OnboardingScreen from './src/screens/onboarding';
+import EventScreen from './src/screens/eventScreen';
+import EventDetailScreen from './src/screens/EventDetailScreen';
+import CompetitionDetailScreen from './src/screens/CompetitionDetailScreen';
 LogBox.ignoreAllLogs();
 const App = () => {
-
-  return <MyNavigationContainer />;
-
+  return <CompetitionDetailScreen />;
 };
 
 export default App;

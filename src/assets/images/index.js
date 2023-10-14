@@ -25,4 +25,7 @@ export {default as IMG_Image5} from './image5.png';
 export {default as IMG_OpacityBg} from './opacityBg.png';
 export {default as IMG_JennieKim} from './JennieKim.png';
 export {default as IMG_AvaComment} from './avaComment.png';
-
+export {default as IMG_View} from './view.png';
+export {default as IMG_EventImage1} from './eventImage1.png';
+export {default as IMG_EventDetailedImage1} from './eventDetailedImage1.png';
+export {default as IMG_Map} from './map.png';

@@ -6,6 +6,8 @@ import LogInScreen from '../screens/LogInScreen';
 import {StyleSheet} from 'react-native';
 import HomeScreen from '../screens/homeScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import EventScreen from '../screens/eventScreen';
+import EventDetailScreen from '../screens/EventDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +24,8 @@ const MyNavigationContainer = () => {
           {/* InitScreen */}
           <Stack.Screen name="Init" component={InitScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Event" component={EventScreen} />
+          <Stack.Screen name="EventDetail" component={EventDetailScreen} />
         </>
       </Stack.Navigator>
     </NavigationContainer>
