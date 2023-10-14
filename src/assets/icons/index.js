@@ -17,6 +17,11 @@ export {default as IC_EditProfile} from './IC_EditProfile';
 export {default as IC_SettingPrivacy} from './IC_SettingPrivacy';
 export {default as IC_Events} from './IC_Events';
 export {default as IC_Saved} from './IC_Saved';
+<<<<<<< HEAD
+export {default as IC_Back} from './IC_Back';
+export {default as IC_SeeMore} from './IC_SeeMore';
+export {default as IC_AddImage} from './IC_AddImage';
+=======
 
 export {default as IC_Calendar} from './IC_Calendar';
 export {default as IC_Tick} from './IC_Tick';
@@ -31,3 +36,4 @@ export {default as IC_Camera} from './IC_Camera';
 export {default as IC_Link} from './IC_Link';
 export {default as IC_Send} from './IC_Send';
 
+>>>>>>> 7546e2294a638037155fc6e3a18aa116cef1626f

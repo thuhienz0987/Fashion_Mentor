@@ -15,23 +15,27 @@ import {
   IC_Profile,
   IC_Scan,
 } from '../assets/icons';
+import {useNavigation} from '@react-navigation/native';
 
 const BottomTab = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.icon}>
+      <TouchableOpacity
+        style={styles.icon}
+        onPress={() => navigation.navigate('Home')}>
         <IC_Home />
       </TouchableOpacity>
       <TouchableOpacity>
         <IC_Explore />
       </TouchableOpacity>
-      <TouchableOpacity>
-        <IC_Scan />
+      <TouchableOpacity onPress={() => navigation.navigate('Scan')}>
+        <IC_Scan fill={'#F3F3F3'} />
       </TouchableOpacity>
       <TouchableOpacity>
         <IC_Event />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
         <IC_Profile />
       </TouchableOpacity>
     </SafeAreaView>

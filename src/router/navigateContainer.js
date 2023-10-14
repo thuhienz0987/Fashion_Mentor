@@ -6,6 +6,10 @@ import LogInScreen from '../screens/LogInScreen';
 import {StyleSheet} from 'react-native';
 import HomeScreen from '../screens/homeScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import ScanScreen from '../screens/scanScreen';
+import BodyShapeScreen from '../screens/bodyShapeScreen';
+import PersonalColorScreen from '../screens/personalColor';
+import ProfileScreen from '../screens/profileScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +26,14 @@ const MyNavigationContainer = () => {
           {/* InitScreen */}
           <Stack.Screen name="Init" component={InitScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
+
+          {/* AI */}
+          <Stack.Screen name="Scan" component={ScanScreen} />
+          <Stack.Screen name="BodyShape" component={BodyShapeScreen} />
+          <Stack.Screen name="PersonalColor" component={PersonalColorScreen} />
+
+          {/* profile */}
+          <Stack.Screen name="Profile" component={ProfileScreen} />
         </>
       </Stack.Navigator>
     </NavigationContainer>

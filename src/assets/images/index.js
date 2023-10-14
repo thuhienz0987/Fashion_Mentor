@@ -31,3 +31,13 @@ export {default as IMG_JennieKim} from './JennieKim.png';
 export {default as IMG_AvaComment} from './avaComment.png';
 
 
+export {default as IMG_ExampleScanBody} from './exampleScanBody.png';
+export {default as IMG_Scan} from './Scan.png';
+export {default as IMG_Scan4Group} from './Scan4Group.png';
+export {default as IMG_Hip} from './hip.png';
+export {default as IMG_Waist} from './waist.png';
+export {default as IMG_bust} from './bust.png';
+export {default as IMG_BodyShape} from './BODY_SHAPE.png';
+export {default as IMG_OutFit1} from './outFit1.png';
+export {default as IMG_OutFit2} from './outFit2.png';
+export {default as IMG_OutFit3} from './outFit3.png';
