@@ -37,3 +37,12 @@ export {default as IC_Link} from './IC_Link';
 export {default as IC_Send} from './IC_Send';
 
 >>>>>>> 7546e2294a638037155fc6e3a18aa116cef1626f
+export {default as IC_Clock} from './IC_Clock';
+export {default as IC_Address} from './IC_Address';
+export {default as IC_EventDetailDate} from './IC_EventDetailDate';
+export {default as IC_EventDetailAddress} from './IC_EventDetailAddress';
+export {default as IC_Address2} from './IC_address2';
+export {default as IC_Car} from './IC_car';
+export {default as IC_Tick} from './IC_Tick';
+export {default as IC_Back} from './IC_Back';
+export {default as IC_CEO} from './IC_CEO';
