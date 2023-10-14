@@ -4,10 +4,11 @@ import MyNavigationContainer from './src/router/navigateContainer';
 import Header from './src/components/header';
 import HomeScreen from './src/screens/homeScreen';
 import {LogBox} from 'react-native';
+import ExploreScreen from './src/screens/exploreScreen';
 
 LogBox.ignoreAllLogs();
 const App = () => {
-  return <MyNavigationContainer />;
+  return <ExploreScreen />;
 };
 
 export default App;
