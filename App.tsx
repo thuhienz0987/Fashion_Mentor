@@ -7,9 +7,15 @@ import {LogBox} from 'react-native';
 import EditProfileScreen from './src/screens/editProfileScreen';
 import EditProfile from './src/screens/editProfileScreen';
 
+import OnboardingScreen from './src/screens/onboarding';
 LogBox.ignoreAllLogs();
 const App = () => {
-  return <EditProfileScreen />;
+
+
+
+  return <MyNavigationContainer />;
+
+
 };
 
 export default App;
