@@ -5,15 +5,27 @@ import {
   SafeAreaView,
   TouchableOpacity,
   ImageBackground,
+  Image,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import color from '../../../constants/color';
 import scale from '../../../constants/responsive';
 import LinearGradient from 'react-native-linear-gradient';
+import {IMG_JennieKim} from '../../../assets/images';
+import {
+  IC_Comment,
+  IC_Favorite,
+  IC_FavoriteRed,
+  IC_Saved,
+  IC_Saved2,
+  IC_SavedYellow,
+} from '../../../assets/icons';
 
 const FrameExplore = props => {
+  const [isFavor, setIsFavor] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
         source={props.image}
         borderRadius={15}
@@ -33,13 +45,34 @@ const FrameExplore = props => {
           ]}></LinearGradient>
         <View style={styles.body}>
           <View style={styles.viewTitle}>
-            <Text style={styles.textTitle}>{props.titleText}</Text>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={styles.avaContainer}>
+                <Image source={IMG_JennieKim} />
+              </View>
+              <Text style={styles.textTitle}>{props.titleText}</Text>
+            </View>
             <Text style={styles.textNormal}>{props.bodyText}</Text>
           </View>
-
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.textButton}>Read more</Text>
-          </TouchableOpacity>
+        </View>
+        <View style={styles.container1}>
+          <View style={styles.container2}>
+            <TouchableOpacity onPress={() => setIsFavor(!isFavor)}>
+              {isFavor ? <IC_Favorite /> : <IC_FavoriteRed />}
+            </TouchableOpacity>
+            <Text>{props.favNum}</Text>
+          </View>
+          <View style={styles.container2}>
+            <TouchableOpacity onPress={() => setIsSaved(!isSaved)}>
+              {isSaved ? <IC_SavedYellow /> : <IC_Saved2 />}
+            </TouchableOpacity>
+            <Text>{props.savedNum}</Text>
+          </View>
+          <View style={styles.container2}>
+            <TouchableOpacity onPress={props.onPress}>
+              <IC_Comment />
+            </TouchableOpacity>
+            <Text>{props.commentNum}</Text>
+          </View>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -49,13 +82,16 @@ const FrameExplore = props => {
 export default FrameExplore;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    marginTop: scale(20),
+  },
   body: {
     alignItems: 'center',
     justifyContent: 'center',
     width: '80%',
     height: '80%',
     margin: scale(20),
+    marginTop: scale(170),
   },
   textContainer: {
     position: 'absolute',
@@ -67,7 +103,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     justifyContent: 'flex-end',
-    borderRadius: 15,
+    borderRadius: 38,
   },
   viewTitle: {
     width: '100%',
@@ -78,12 +114,14 @@ const styles = StyleSheet.create({
     color: color.white,
     fontWeight: 'bold',
     fontSize: 20,
+    marginLeft: scale(10),
   },
 
   textNormal: {
     color: color.white,
     fontWeight: 'normal',
     fontSize: 11,
+    marginTop: scale(10),
   },
   button: {
     backgroundColor: color.white,
@@ -100,5 +138,26 @@ const styles = StyleSheet.create({
     color: color.Black,
     fontWeight: 'bold',
     fontSize: 10,
+  },
+  avaContainer: {
+    width: scale(35),
+    height: scale(35),
+    borderRadius: 30,
+    borderWidth: 1,
+    borderColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  container1: {
+    height: scale(180),
+    width: scale(50),
+    position: 'absolute',
+    right: scale(10),
+    top: scale(20),
+    justifyContent: 'space-between',
+  },
+  container2: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

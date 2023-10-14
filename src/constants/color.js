@@ -8,6 +8,7 @@ const color = {
   Grullo: '#ae9885',
   PhilippineSilver: '#B6B6B6',
   Lumber: '#FFE5CE',
+  Argent: '#C1C0C0',
 };
 
 export default color;

@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: color.Black,
-    fontSize: 18,
+    fontSize: 26,
     fontWeight: 'bold',
   },
   viewText: {
