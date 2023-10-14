@@ -7,41 +7,30 @@ import {
   ImageBackground,
 } from 'react-native';
 import React from 'react';
-import {IMG_HotNew1, IMG_HotNew2, IMG_HotNew3} from '../assets/images';
-import scale from '../constants/responsive';
-import color from '../constants/color';
+import color from '../../../constants/color';
+import scale from '../../../constants/responsive';
 import LinearGradient from 'react-native-linear-gradient';
 
-const FramePicture = props => {
-  const {width, height} = props;
-
+const FrameExplore = props => {
   return (
-    <SafeAreaView
-      style={{
-        width: width,
-        height: height,
-      }}>
+    <SafeAreaView>
       <ImageBackground
         source={props.image}
         borderRadius={15}
         resizeMode="cover"
         style={{
-          width: width,
-          height: height,
+          width: 350,
+          height: 256,
           overflow: 'hidden',
         }}>
         <LinearGradient
           style={styles.textContainer}
           colors={[
+            'rgba(1,1 ,1 , 0.1)',
             'rgba(1,1 ,1 , 0.2)',
             'rgba(1,1 ,1 , 0.3)',
-            'rgba(1,1 ,1 , 0.4)',
-            'rgba(1, 1, 1, 0.5)',
-          ]}>
-          {/* <Text style={styles.prodName}>
-              2021 STYLE GUIDE: THE BIGGEST FALL PAINT
-            </Text> */}
-        </LinearGradient>
+            'rgba(1, 1, 1, 0.4)',
+          ]}></LinearGradient>
         <View style={styles.body}>
           <View style={styles.viewTitle}>
             <Text style={styles.textTitle}>{props.titleText}</Text>
@@ -57,7 +46,7 @@ const FramePicture = props => {
   );
 };
 
-export default FramePicture;
+export default FrameExplore;
 
 const styles = StyleSheet.create({
   container: {},

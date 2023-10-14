@@ -28,61 +28,83 @@ const HomeScreen = () => {
           <Text style={styles.textTitle}>Collection</Text>
           <Text style={styles.textViewAll}>View all</Text>
         </View>
-        {/* collection */}
-        <View style={styles.row}>
-          <View style={styles.column}>
+        {/* collection combo1*/}
+        <View style={styles.column}>
+          <View style={styles.row}>
+            <View style={styles.column}>
+              <FramePicture
+                image={IMG_Class60}
+                width={scale(168)}
+                height={scale(175)}
+                titleText={'Classic 60s'}
+                bodyText={'60s collection'}
+              />
+              <FramePicture
+                image={IMG_NewLook50}
+                width={scale(168)}
+                height={scale(175)}
+                titleText={'Newlook 50s'}
+                bodyText={'50s collection'}
+              />
+            </View>
+
+            <View>
+              <FramePicture
+                image={IMG_Vintage}
+                width={scale(168)}
+                height={scale(362)}
+                titleText={'Vintage'}
+                bodyText={'Vintage collection'}
+              />
+            </View>
+          </View>
+          <View style={{alignItems: 'center'}}>
             <FramePicture
-              image={IMG_Class60}
-              width={scale(168)}
-              height={scale(175)}
-              titleText={'Classic 60s'}
-              bodyText={'60s collection'}
-            />
-            <FramePicture
-              image={IMG_NewLook50}
-              width={scale(168)}
+              image={IMG_Vintage}
+              width={scale(350)}
               height={scale(175)}
               titleText={'Newlook 50s'}
               bodyText={'50s collection'}
-            />
-          </View>
-
-          <View>
-            <FramePicture
-              image={IMG_Vintage}
-              width={scale(168)}
-              height={scale(362)}
-              titleText={'Vintage'}
-              bodyText={'Vintage collection'}
             />
           </View>
         </View>
 
-        <View style={styles.row}>
-          <View style={styles.column}>
+        <View style={styles.column}>
+          <View style={styles.row}>
+            <View style={styles.column}>
+              <FramePicture
+                image={IMG_Class60}
+                width={scale(168)}
+                height={scale(175)}
+                titleText={'Classic 60s'}
+                bodyText={'60s collection'}
+              />
+              <FramePicture
+                image={IMG_NewLook50}
+                width={scale(168)}
+                height={scale(175)}
+                titleText={'Newlook 50s'}
+                bodyText={'50s collection'}
+              />
+            </View>
+
+            <View>
+              <FramePicture
+                image={IMG_Vintage}
+                width={scale(168)}
+                height={scale(362)}
+                titleText={'Vintage'}
+                bodyText={'Vintage collection'}
+              />
+            </View>
+          </View>
+          <View style={{alignItems: 'center'}}>
             <FramePicture
-              image={IMG_Class60}
-              width={scale(168)}
-              height={scale(175)}
-              titleText={'Classic 60s'}
-              bodyText={'60s collection'}
-            />
-            <FramePicture
-              image={IMG_NewLook50}
-              width={scale(168)}
+              image={IMG_Vintage}
+              width={scale(350)}
               height={scale(175)}
               titleText={'Newlook 50s'}
               bodyText={'50s collection'}
-            />
-          </View>
-
-          <View>
-            <FramePicture
-              image={IMG_Vintage}
-              width={scale(168)}
-              height={scale(362)}
-              titleText={'Vintage'}
-              bodyText={'Vintage collection'}
             />
           </View>
         </View>

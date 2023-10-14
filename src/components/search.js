@@ -32,9 +32,9 @@ const Search = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.changeTheme}>
+      {/* <View style={styles.changeTheme}>
         <IC_ChangeTheme />
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 };
@@ -43,7 +43,6 @@ export default Search;
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
     padding: scale(10),
   },
   searchBar: {
@@ -51,7 +50,6 @@ const styles = StyleSheet.create({
     paddingVertical: scale(5),
     borderRadius: scale(30),
     backgroundColor: color.AntiFlashWhite,
-    // marginTop: scale(5),
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
@@ -68,11 +66,11 @@ const styles = StyleSheet.create({
     height: scale(42),
     color: color.Black,
     top: scale(2),
-    width: scale(180),
+    width: scale(220),
     marginLeft: scale(10),
   },
-  changeTheme: {
-    // backgroundColor: color.Grullo,
-    marginLeft: scale(10),
-  },
+  // changeTheme: {
+  //   // backgroundColor: color.Grullo,
+  //   marginLeft: scale(10),
+  // },
 });
