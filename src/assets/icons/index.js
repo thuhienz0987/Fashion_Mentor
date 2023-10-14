@@ -7,3 +7,5 @@ export {default as IC_Explore} from './IC_Explore';
 export {default as IC_Scan} from './IC_Scan';
 export {default as IC_Event} from './IC_Event';
 export {default as IC_Profile} from './IC_Profile';
+export {default as IC_Eye} from './IC_Eye';
+export {default as IC_EyeOff} from './IC_EyeOff';
