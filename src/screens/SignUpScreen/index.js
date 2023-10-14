@@ -6,63 +6,68 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+  Image,
 } from 'react-native';
-import React, {useState, useContext, useRef} from 'react';
+import React, {useState} from 'react';
 import * as yup from 'yup';
 import {Controller, useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {RadioButton} from 'react-native-paper';
 
-//component
+// component imports
 import color from '../../constants/color';
-//   import FONT_FAMILY from '../../constants/fonts';
-//   import {IC_BackwardArrow} from '../../assets/icons';
 import SubmitButton from '../../components/submitButton';
 import scale from '../../constants/responsive';
 import axios from '../../api/axios';
-import {
-  IMG_HotNew1,
-  IMG_HotNew2,
-  IMG_HotNew3,
-  IMG_HotNew4,
-  IMG_InitImage,
-} from '../../assets/images';
+import {IMG_Login} from '../../assets/images';
+import FONT_FAMILY from '../../constants/font';
+import {IC_Eye, IC_EyeOff, IMG_FaceBook, IMG_Google} from '../../assets/icons';
 
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-const SignInPayLoadSchema = yup.object({
-  email: yup
-    .string()
-    .required('Email cannot be blank')
-    .email('Invalid email')
-    .max(50, 'Email length must be less than 50 characters'),
-  password: yup
-    .string()
-    .required('Password can not be blank')
-    .min(6, 'Password length must be more than 6 characters')
-    .max(16, 'Password length must be less than 16 characters')
-    .matches(
-      passwordRegex,
-      'Password must contain uppercase, lowercase and number characters',
-    ),
-  userName: yup
-    .string()
-    .max(30, 'Invalid name')
-    .required('Name cannot be blank'),
-  //   gender:yup.string().max()
-});
-
 const SignUpScreen = props => {
-  // const {setAuth} = useAuth();
   const [mail, setMail] = useState('');
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
   const [gender, setGender] = useState('Female'); // Initialize with a default value
   const [errorMessage, setErrorMessage] = useState('');
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [passwordConfirm, setPasswordConfirm] = useState('');
 
   const handleGenderChange = value => {
     setGender(value);
   };
+  const handleShowConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+  const SignInPayLoadSchema = yup.object({
+    email: yup
+      .string()
+      .required('Email cannot be blank')
+      .email('Invalid email')
+      .max(50, 'Email length must be less than 50 characters'),
+    password: yup
+      .string()
+      .required('Password can not be blank')
+      .min(6, 'Password length must be more than 6 characters')
+      .max(16, 'Password length must be less than 16 characters')
+      .matches(
+        passwordRegex,
+        'Password must contain uppercase, lowercase and number characters',
+      ),
+    userName: yup
+      .string()
+      .max(30, 'Invalid name')
+      .required('Name cannot be blank'),
+    //   gender:yup.string().max()
+    passConfirm: yup
+      .string()
+      .oneOf([yup.ref('password'), null], 'Passwords must match'),
+  });
 
   const {
     control,
@@ -74,6 +79,7 @@ const SignUpScreen = props => {
       email: '',
       password: '',
       userName: '',
+      passwordConfirm: '',
     },
     resolver: yupResolver(SignInPayLoadSchema),
   });
@@ -115,131 +121,220 @@ const SignUpScreen = props => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ImageBackground
-        source={IMG_InitImage}
-        resizeMode="cover"
-        blurRadius={4}
-        style={styles.header}>
-        <View style={styles.ViewTitleText}>
-          <Text style={styles.textTile}>Welcome FMENTOR!</Text>
-          <Text style={styles.textLabel}>Sign up to continue</Text>
-        </View>
-      </ImageBackground>
+    <ImageBackground source={IMG_Login} style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : null}
+          style={styles.keyboardAvoidingView}>
+          <View style={styles.header}></View>
 
-      <View style={styles.body}>
-        {/* userName */}
-        <Controller
-          name="userName"
-          control={control}
-          render={({field: {onChange, value}}) => (
-            <View style={styles.inputMailBox}>
-              <View style={styles.viewInput}>
-                <TextInput
-                  secureTextEntry={false}
-                  onChangeText={userName => [
-                    onChange(userName),
-                    setName(userName),
-                  ]}
-                  value={value}
-                  placeholder="Name"
-                  placeholderTextColor={color.GraySolid}
-                  style={styles.inputText}
+          <View style={styles.viewTextTitle}>
+            <Text style={styles.textTitle}>Sign up</Text>
+          </View>
+
+          <ScrollView>
+            <View style={styles.body}>
+              {/* userName */}
+              <Controller
+                name="userName"
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <View style={styles.inputMailBox}>
+                    <View style={styles.viewInputName}>
+                      <Text style={styles.inputName}>User name</Text>
+                    </View>
+                    <View style={styles.viewInput}>
+                      <TextInput
+                        secureTextEntry={false}
+                        onChangeText={userName => [
+                          onChange(userName),
+                          setName(userName),
+                        ]}
+                        value={value}
+                        placeholderTextColor={color.GraySolid}
+                        style={styles.inputText}
+                      />
+                    </View>
+                    {errors?.userName && (
+                      <Text style={styles.textFailed}>
+                        {errors.userName.message}
+                      </Text>
+                    )}
+                  </View>
+                )}
+              />
+              {/* emailInput */}
+              <Controller
+                name="email"
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <View style={styles.inputMailBox}>
+                    <View style={styles.viewInputName}>
+                      <Text style={styles.inputName}>Email</Text>
+                    </View>
+                    <View style={styles.viewInput}>
+                      <TextInput
+                        onChangeText={email => [
+                          onChange(email),
+                          setMail(email),
+                          console.log(value),
+                        ]}
+                        value={value}
+                        placeholderTextColor={color.GraySolid}
+                        style={styles.inputText}
+                        keyboardType="email-address"
+                      />
+                    </View>
+                    {errors?.email && (
+                      <Text style={styles.textFailed}>
+                        {errors.email.message}
+                      </Text>
+                    )}
+                  </View>
+                )}
+              />
+
+              {/* passwordInput */}
+              <Controller
+                name="password"
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <View style={styles.inputMailBox}>
+                    <View style={styles.viewInputName}>
+                      <Text style={styles.inputName}>Password</Text>
+                    </View>
+                    <View style={styles.viewInput}>
+                      <TextInput
+                        secureTextEntry={passwordVisible}
+                        onChangeText={password => [
+                          onChange(password),
+                          setPass(password),
+                        ]}
+                        value={value}
+                        // placeholder="Password"
+                        placeholderTextColor={color.GraySolid}
+                        style={styles.inputText}
+                      />
+                      <TouchableOpacity
+                        style={styles.eyeIcon}
+                        onPress={() => setPasswordVisible(!passwordVisible)}>
+                        {passwordVisible ? <IC_Eye /> : <IC_EyeOff />}
+                      </TouchableOpacity>
+                    </View>
+                    {errors?.password && (
+                      <Text style={styles.textFailed}>
+                        {errors.password.message}
+                      </Text>
+                    )}
+                  </View>
+                )}
+              />
+
+              {/* passwordConfirmInput */}
+              <Controller
+                name="passConfirm"
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <View style={styles.inputMailBox}>
+                    <View style={styles.viewInputName}>
+                      <Text style={styles.inputName}>Password confirm</Text>
+                    </View>
+                    <View style={styles.viewInput}>
+                      <TextInput
+                        secureTextEntry={showConfirmPassword}
+                        onChangeText={passwordConfirm => [
+                          onChange(passwordConfirm),
+                          setPasswordConfirm(passwordConfirm),
+                        ]}
+                        value={value}
+                        placeholderTextColor={color.GraySolid}
+                        style={styles.inputText}
+                      />
+                      <TouchableOpacity
+                        style={styles.eyeIcon}
+                        onPress={() =>
+                          setShowConfirmPassword(!showConfirmPassword)
+                        }>
+                        {showConfirmPassword ? <IC_Eye /> : <IC_EyeOff />}
+                      </TouchableOpacity>
+                    </View>
+                    {errors?.passConfirm && (
+                      <Text style={styles.textFailed}>
+                        {errors.passConfirm.message}
+                      </Text>
+                    )}
+                  </View>
+                )}
+              />
+              <>
+                {/* gender */}
+                <View style={styles.genderContainer}>
+                  <RadioButton.Group
+                    onValueChange={handleGenderChange}
+                    value={gender}>
+                    <View style={{flexDirection: 'row'}}>
+                      <View style={styles.radioOption}>
+                        <RadioButton value="Female" color={color.Black} />
+                        <Text>Female</Text>
+                      </View>
+                      <View style={styles.radioOption}>
+                        <RadioButton value="Male" color={color.Black} />
+                        <Text>Male</Text>
+                      </View>
+                    </View>
+                  </RadioButton.Group>
+                </View>
+              </>
+
+              <View style={styles.buttonSignIn}>
+                <SubmitButton
+                  text={'Sign Up'}
+                  backgroundColor={color.Black}
+                  color={color.white}
+                  onPress={handleSubmit(handleSubmits)}
                 />
               </View>
-              {errors?.userName && (
-                <Text style={styles.textFailed}>{errors.userName.message}</Text>
-              )}
-            </View>
-          )}
-        />
 
-        {/* emailInput */}
-        <Controller
-          name="email"
-          control={control}
-          render={({field: {onChange, value}}) => (
-            <View style={styles.inputMailBox}>
-              <View style={styles.viewInput}>
-                <TextInput
-                  onChangeText={email => [
-                    onChange(email),
-                    setMail(email),
-                    console.log(value),
-                  ]}
-                  placeholder="Email"
-                  value={value}
-                  placeholderTextColor={color.GraySolid}
-                  style={styles.inputText}
-                  keyboardType="email-address"
-                />
+              <View style={styles.ViewErrorText}>
+                <Text style={styles.textError}>{errorMessage}</Text>
               </View>
-              {errors?.email && (
-                <Text style={styles.textFailed}>{errors.email.message}</Text>
-              )}
+              {/* Add the "Sign up with" section here */}
+              {/* 
+              <View style={styles.viewOther}>
+                <Text style={styles.textNormal}>Sign up with</Text>
+                <View style={styles.viewIcon}>
+                  <TouchableOpacity>
+                    <Image
+                      source={IMG_Google}
+                      style={styles.icons}
+                      resizeMode="contain"
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <Image
+                      source={IMG_FaceBook}
+                      style={styles.icons}
+                      resizeMode="contain"
+                    />
+                  </TouchableOpacity>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={styles.textNormal}>
+                    Already have an account?
+                  </Text>
+                  <TouchableOpacity
+                    onPress={() => props.navigation.navigate('Login')}>
+                    <Text style={[styles.textNormal, {fontWeight: 'bold'}]}>
+                      Login
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </View> */}
             </View>
-          )}
-        />
-
-        {/* passwordInput */}
-        <Controller
-          name="password"
-          control={control}
-          render={({field: {onChange, value}}) => (
-            <View style={styles.inputMailBox}>
-              <View style={styles.viewInput}>
-                <TextInput
-                  secureTextEntry={true}
-                  onChangeText={password => [
-                    onChange(password),
-                    setPass(password),
-                  ]}
-                  value={value}
-                  placeholder="Password"
-                  placeholderTextColor={color.GraySolid}
-                  style={styles.inputText}
-                />
-              </View>
-              {errors?.password && (
-                <Text style={styles.textFailed}>{errors.password.message}</Text>
-              )}
-            </View>
-          )}
-        />
-        {/* gender */}
-        <View style={styles.genderContainer}>
-          {/* <Text style={styles.genderLabel}>Gender:</Text> */}
-          <RadioButton.Group
-            onValueChange={value => handleGenderChange(value)}
-            value={gender}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={styles.radioOption}>
-                <RadioButton value="Female" />
-                <Text>Female</Text>
-              </View>
-              <View style={styles.radioOption}>
-                <RadioButton value="Male" />
-                <Text>Male</Text>
-              </View>
-            </View>
-          </RadioButton.Group>
-        </View>
-
-        <View style={styles.buttonSignUn}>
-          <SubmitButton
-            text={'Sign up'}
-            backgroundColor={color.Black}
-            color={color.white}
-            onPress={handleSubmit(handleSubmits)}
-            // loading={loading}
-          />
-        </View>
-
-        <View style={styles.ViewErrorText}>
-          <Text style={styles.textError}>{errorMessage}</Text>
-        </View>
-      </View>
-    </SafeAreaView>
+          </ScrollView>
+        </KeyboardAvoidingView>
+      </ScrollView>
+    </ImageBackground>
   );
 };
 
@@ -247,19 +342,31 @@ export default SignUpScreen;
 
 const styles = StyleSheet.create({
   container: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  scrollContainer: {
+    // flexGrow: 1,
+  },
+  keyboardAvoidingView: {
     flex: 1,
   },
   header: {
-    flex: 0.3,
-    backgroundColor: color.Black,
+    height: '30%',
+    marginTop: scale(0),
     justifyContent: 'flex-end',
   },
-  viewIcon: {
-    marginLeft: scale(30),
-    width: scale(40),
-    height: scale(30),
-    marginTop: scale(23),
-    alignItems: 'center',
+
+  viewTextTitle: {
+    marginTop: scale(80),
+    paddingLeft: scale(20),
+  },
+  textTitle: {
+    fontSize: 48,
+    fontFamily: FONT_FAMILY.Lexend,
+    fontWeight: 'bold',
+    color: color.Black,
   },
   ViewTitleText: {
     marginLeft: scale(30),
@@ -268,42 +375,57 @@ const styles = StyleSheet.create({
   textTile: {
     color: color.white,
     fontSize: 36,
-    fontWeight: '700',
-  },
-  textLabel: {
-    color: color.white,
-    fontSize: 18,
-    fontWeight: '400',
+    fontFamily: FONT_FAMILY.Lexend,
   },
   body: {
-    flex: 0.7,
-    backgroundColor: color.white,
+    height: 'auto',
+    flex: 1,
     alignItems: 'center',
   },
 
   inputMailBox: {
-    marginTop: scale(10),
-    width: scale(295),
-    height: scale(75),
+    width: scale(326),
+    height: scale(100),
     justifyContent: 'center',
   },
   viewInput: {
-    height: scale(50),
-    borderBottomWidth: 1,
+    height: scale(43),
+    borderWidth: 1,
     justifyContent: 'flex-end',
-    borderColor: color.GraySolid,
+    borderColor: color.Black,
     fontWeight: '400',
-    // borderWidth: 1,
+    fontFamily: FONT_FAMILY.Lexend,
+    borderRadius: 15,
+  },
+  viewInputName: {
+    marginLeft: scale(15),
+    marginBottom: scale(5),
+  },
+  inputName: {
+    color: color.Black,
+    fontSize: 16,
+    fontFamily: FONT_FAMILY.Lexend,
   },
   inputText: {
     color: color.Black,
     fontSize: 16,
     marginLeft: scale(5),
-    marginBottom: scale(-10),
+    marginBottom: scale(-5),
     fontWeight: '400',
+    fontFamily: FONT_FAMILY.Lexend,
   },
-  buttonSignUn: {
+  buttonSignIn: {
     marginTop: scale(61),
+  },
+  ViewForgotText: {
+    marginLeft: scale(100),
+    marginTop: scale(5),
+  },
+  textForgot: {
+    color: color.Black,
+    fontSize: 12,
+    fontWeight: '400',
+    fontStyle: 'italic',
   },
   ViewErrorText: {
     justifyContent: 'center',
@@ -322,6 +444,12 @@ const styles = StyleSheet.create({
     fontSize: scale(12),
     color: color.RedSolid,
   },
+  eyeIcon: {
+    justifyContent: 'flex-end',
+    position: 'absolute',
+    right: scale(5),
+    bottom: scale(5),
+  },
   genderContainer: {
     width: '100%',
     justifyContent: 'space-around',
@@ -336,5 +464,27 @@ const styles = StyleSheet.create({
     paddingHorizontal: scale(30),
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  viewOther: {
+    height: scale(30),
+    backgroundColor: color.GraySolid,
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: scale(5),
+  },
+  viewIcon: {
+    marginVertical: scale(5),
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    width: scale(100),
+  },
+  textNormal: {
+    color: color.Black,
+    fontSize: 16,
+    fontFamily: FONT_FAMILY.Lexend,
+  },
+  icons: {
+    width: scale(33),
+    height: scale(33),
   },
 });
