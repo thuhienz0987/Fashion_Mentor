@@ -15,14 +15,11 @@ import EditProfile from './src/screens/editProfileScreen';
 >>>>>>> 7546e2294a638037155fc6e3a18aa116cef1626f
 
 import OnboardingScreen from './src/screens/onboarding';
+import Tags from './src/screens/tags';
+import TagsScreen from './src/screens/tags';
 LogBox.ignoreAllLogs();
 const App = () => {
-
-
-
-  return <MyNavigationContainer />;
-
-
+  return <TagsScreen />;
 };
 
 export default App;
