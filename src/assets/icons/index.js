@@ -17,3 +17,6 @@ export {default as IC_EditProfile} from './IC_EditProfile';
 export {default as IC_SettingPrivacy} from './IC_SettingPrivacy';
 export {default as IC_Events} from './IC_Events';
 export {default as IC_Saved} from './IC_Saved';
+export {default as IC_Back} from './IC_Back';
+export {default as IC_SeeMore} from './IC_SeeMore';
+export {default as IC_AddImage} from './IC_AddImage';

@@ -34,6 +34,7 @@ import {
 } from '../../assets/icons';
 import ColorCircle from '../../components/colorCircle';
 import {TouchableWithoutFeedback} from 'react-native';
+import BottomTab from '../../components/bottomTab';
 
 const ProfileScreen = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -187,6 +188,7 @@ const ProfileScreen = () => {
           </View>
         </TouchableOpacity>
       ) : null}
+      <BottomTab></BottomTab>
     </SafeAreaView>
   );
 };
