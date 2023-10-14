@@ -1,0 +1,9 @@
+export {default as IC_Notify} from './IC_Notify';
+export {default as IC_Search} from './IC_Search';
+export {default as IC_Delete} from './IC_Delete';
+export {default as IC_ChangeTheme} from './IC_ChangeTheme';
+export {default as IC_Home} from './IC_Home';
+export {default as IC_Explore} from './IC_Explore';
+export {default as IC_Scan} from './IC_Scan';
+export {default as IC_Event} from './IC_Event';
+export {default as IC_Profile} from './IC_Profile';
