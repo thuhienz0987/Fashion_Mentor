@@ -10,6 +10,7 @@ import EventScreen from './src/screens/eventScreen';
 import EventDetailScreen from './src/screens/EventDetailScreen';
 import CompetitionDetailScreen from './src/screens/CompetitionDetailScreen';
 import ExplorationScreen from './src/screens/ExplorationScreen';
+import ExploreScreen from '../SheCodeProject/src/screens/exploreScreen';
 LogBox.ignoreAllLogs();
 const App = () => {
   return <EventScreen />;

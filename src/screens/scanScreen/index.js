@@ -66,7 +66,7 @@ const ScanScreen = props => {
       setPhotoTaken(true);
       setTimeout(() => {
         // Chuyển màn hình sau 5 giây
-        navigation.navigate(screen ? 'PersonalColor' : 'BodyShape'); // Thay 'LoginScreen' bằng màn hình bạn muốn chuyển đến
+        navigation.navigate(screen ? 'PersonalColor' : 'BodyShape'); 
       }, 5000);
     }
   };
@@ -98,7 +98,7 @@ const ScanScreen = props => {
       Animated.sequence([
         Animated.timing(scrollValue, {
           toValue: 1,
-          duration: 5000,
+          duration: 1000,
           easing: Easing.linear,
           useNativeDriver: false,
         }),
@@ -109,7 +109,7 @@ const ScanScreen = props => {
         }),
         Animated.timing(scrollValue, {
           toValue: -1,
-          duration: 5000,
+          duration: 3000,
           easing: Easing.linear,
           useNativeDriver: false,
         }),
@@ -132,7 +132,7 @@ const ScanScreen = props => {
       <ImageBackground
         source={{uri: image}}
         style={styles.background}
-        resizeMethod="contain">
+        resizeMethod="auto">
         <Animated.Image
           source={IMG_Scan}
           style={[
@@ -209,9 +209,6 @@ const styles = StyleSheet.create({
 
     backgroundColor: color.Black,
   },
-  // addImageIcon: {
-  //   zIndex: 1, // Đặt z-index để đè lên hình ảnh
-  // },
   button: {
     alignItems: 'center',
     marginBottom: scale(20),

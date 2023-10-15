@@ -25,6 +25,7 @@ import {
 } from '../../assets/images';
 import {isPropertySignature} from 'typescript';
 import FrameCompetition from './components/frameCompetition';
+import BottomTab from '../../components/bottomTab';
 
 const EventScreen = props => {
   const [isEventsSelected, setIsEventsSelected] = useState('Events');
@@ -182,6 +183,7 @@ const EventScreen = props => {
           />
         )}
       </View>
+      <BottomTab/>
     </SafeAreaView>
   );
 };

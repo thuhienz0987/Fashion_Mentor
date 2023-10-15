@@ -2,7 +2,6 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import color from '../../../constants/color';
 import scale from '../../../constants/responsive';
-// import { IC_Camera, IC_Image } from '../assets/icons'
 
 const Popup = props => {
   return (
