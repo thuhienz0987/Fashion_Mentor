@@ -32,9 +32,6 @@ const Search = () => {
           </TouchableOpacity>
         </View>
       </View>
-      {/* <View style={styles.changeTheme}>
-        <IC_ChangeTheme />
-      </View> */}
     </SafeAreaView>
   );
 };
@@ -69,8 +66,4 @@ const styles = StyleSheet.create({
     width: scale(220),
     marginLeft: scale(10),
   },
-  // changeTheme: {
-  //   // backgroundColor: color.Grullo,
-  //   marginLeft: scale(10),
-  // },
 });

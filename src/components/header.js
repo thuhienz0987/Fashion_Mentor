@@ -39,10 +39,8 @@ export default Header;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: scale(20),
-    // flex: 1,
     flexDirection: 'row',
     height: scale(70),
-    // backgroundColor: color.GraySolid,
     alignItems: 'center',
     justifyContent: 'space-between',
   },

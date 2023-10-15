@@ -288,7 +288,6 @@ const styles = StyleSheet.create({
     // flex: 1,
     flexDirection: 'row',
     height: scale(70),
-    // backgroundColor: color.GraySolid,
     alignItems: 'center',
     justifyContent: 'space-between',
   },

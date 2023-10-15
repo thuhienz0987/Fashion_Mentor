@@ -3,16 +3,12 @@ import React from 'react';
 import color from '../../constants/color';
 import HotNew from './component/onboard';
 import scale from '../../constants/responsive';
-import { IMG_On1, IMG_On2, IMG_On3 } from '../../assets/images';
+import {IMG_On1, IMG_On2, IMG_On3} from '../../assets/images';
 
 const OnboardingScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      
-      
-        
-        <HotNew />
-
+      <HotNew />
     </SafeAreaView>
   );
 };
@@ -30,7 +26,6 @@ const styles = StyleSheet.create({
   },
   viewCollection: {
     flexDirection: 'row',
-    // backgroundColor: color.Black,
     marginHorizontal: scale(20),
     marginTop: scale(10),
     justifyContent: 'space-between',

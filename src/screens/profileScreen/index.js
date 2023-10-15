@@ -228,10 +228,8 @@ const styles = StyleSheet.create({
   },
   container1: {
     paddingHorizontal: scale(20),
-    // flex: 1,
     flexDirection: 'row',
     height: scale(70),
-    // backgroundColor: color.GraySolid,
     alignItems: 'center',
     justifyContent: 'space-between',
   },

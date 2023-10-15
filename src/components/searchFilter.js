@@ -73,8 +73,4 @@ const styles = StyleSheet.create({
     width: scale(190),
     marginLeft: scale(10),
   },
-  // changeTheme: {
-  //   // backgroundColor: color.Grullo,
-  //   marginLeft: scale(10),
-  // },
 });

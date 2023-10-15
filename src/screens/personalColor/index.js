@@ -101,7 +101,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
-    // height: '',
   },
   textTitle: {
     fontSize: 26,

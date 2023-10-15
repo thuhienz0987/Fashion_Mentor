@@ -298,38 +298,6 @@ const SignUpScreen = props => {
               <View style={styles.ViewErrorText}>
                 <Text style={styles.textError}>{errorMessage}</Text>
               </View>
-              {/* Add the "Sign up with" section here */}
-              {/*
-              <View style={styles.viewOther}>
-                <Text style={styles.textNormal}>Sign up with</Text>
-                <View style={styles.viewIcon}>
-                  <TouchableOpacity>
-                    <Image
-                      source={IMG_Google}
-                      style={styles.icons}
-                      resizeMode="contain"
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity>
-                    <Image
-                      source={IMG_FaceBook}
-                      style={styles.icons}
-                      resizeMode="contain"
-                    />
-                  </TouchableOpacity>
-                </View>
-                <View style={{flexDirection: 'row'}}>
-                  <Text style={styles.textNormal}>
-                    Already have an account?
-                  </Text>
-                  <TouchableOpacity
-                    onPress={() => props.navigation.navigate('Login')}>
-                    <Text style={[styles.textNormal, {fontWeight: 'bold'}]}>
-                      Login
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View> */}
             </View>
           </ScrollView>
         </KeyboardAvoidingView>

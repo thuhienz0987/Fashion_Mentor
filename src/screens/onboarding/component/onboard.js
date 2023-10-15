@@ -69,7 +69,6 @@ export default HotNew;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //backgroundColor: "#EDD1FF",
   },
   swiper: {
     height: '100%',
@@ -86,8 +85,6 @@ const styles = StyleSheet.create({
     marginLeft: scale(10),
     color: color.Black,
     justifyContent: 'center',
-    //fontFamily: FONT_FAMILY.NexaBold,
-    //color: "#000000",
   },
   subText: {
     height: scale(100),
@@ -98,8 +95,6 @@ const styles = StyleSheet.create({
     marginLeft: scale(10),
     color: color.GraySolid,
     justifyContent: 'center',
-    //fontFamily: FONT_FAMILY.NexaBold,
-    //color: "#000000",
   },
   wrapDot: {
     width: '20%',
@@ -129,9 +124,6 @@ const styles = StyleSheet.create({
     bottom: scale(20),
     right: scale(20),
     fontSize: scale(14),
-    // alignSelf: 'center',
     color: color.Black,
-    //fontFamily: FONT_FAMILY.NexaRegular,
-    //color: CUSTOM_COLOR.White,
   },
 });

@@ -203,7 +203,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   viewIcon: {
-    // position: 'fixed',
     position: 'absolute',
     top: 100,
 
@@ -218,7 +217,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignContent: 'flex-end',
   },
-  hip: {
-    // backgroundColor: color.GraySolid,
-  },
-})
+  hip: {},
+});

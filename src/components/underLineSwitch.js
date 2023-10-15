@@ -1,7 +1,6 @@
 import {StyleSheet, Text, Pressable, View} from 'react-native';
 import React from 'react';
 import color from '../constants/color';
-// import FONT_FAMILY from '../../constants/fonts';
 import scale from '../constants/responsive';
 
 const UnderLine = props => {
@@ -77,7 +76,5 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: scale(15),
     alignSelf: 'center',
-
-    // fontFamily: FONT_FAMILY.Bold,
   },
 });
