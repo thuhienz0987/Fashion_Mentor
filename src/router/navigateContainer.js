@@ -43,6 +43,7 @@ const MyNavigationContainer = () => {
           {/* explore */}
           <Stack.Screen name="Explore" component={ExploreScreen} />
 
+          
         </>
       </Stack.Navigator>
     </NavigationContainer>

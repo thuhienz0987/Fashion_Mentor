@@ -275,11 +275,11 @@ const SignUpScreen = props => {
                     <View style={{flexDirection: 'row'}}>
                       <View style={styles.radioOption}>
                         <RadioButton value="Female" color={color.Black} />
-                        <Text>Female</Text>
+                        <Text style={{color:color.Black}}>Female</Text>
                       </View>
                       <View style={styles.radioOption}>
                         <RadioButton value="Male" color={color.Black} />
-                        <Text>Male</Text>
+                        <Text style={{color:color.Black}}>Male</Text>
                       </View>
                     </View>
                   </RadioButton.Group>
