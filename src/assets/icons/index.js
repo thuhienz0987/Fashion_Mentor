@@ -27,7 +27,7 @@ export {default as IC_EventDetailAddress} from './IC_EventDetailAddress';
 export {default as IC_Address2} from './IC_address2';
 export {default as IC_Car} from './IC_car';
 export {default as IC_Tick} from './IC_Tick';
-// export {default as IC_Back} from './IC_Back';
+export {default as IC_Back} from './IC_Back';
 export {default as IC_CEO} from './IC_CEO';
 export {default as IC_Favorite} from './IC_Favorite';
 export {default as IC_FavoriteRed} from './IC_FavoriteRed';
