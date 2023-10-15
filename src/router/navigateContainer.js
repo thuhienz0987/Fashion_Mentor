@@ -12,6 +12,7 @@ import PersonalColorScreen from '../screens/personalColor';
 import ProfileScreen from '../screens/profileScreen';
 import EventScreen from '../screens/eventScreen';
 import EventDetailScreen from '../screens/EventDetailScreen';
+import ExploreScreen from '../screens/exploreScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,10 @@ const MyNavigationContainer = () => {
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Event" component={EventScreen} />
           <Stack.Screen name="EventDetail" component={EventDetailScreen} />
+
+          {/* explore */}
+          <Stack.Screen name="Explore" component={ExploreScreen} />
+
         </>
       </Stack.Navigator>
     </NavigationContainer>

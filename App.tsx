@@ -11,7 +11,7 @@ import EventDetailScreen from './src/screens/EventDetailScreen';
 import CompetitionDetailScreen from './src/screens/CompetitionDetailScreen';
 LogBox.ignoreAllLogs();
 const App = () => {
-  return <CompetitionDetailScreen />;
+  return <MyNavigationContainer />;
 };
 
 export default App;
