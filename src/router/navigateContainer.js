@@ -42,12 +42,8 @@ const MyNavigationContainer = () => {
 
           {/* explore */}
 
-<<<<<<< HEAD
           {/* OnboardingScreen */}
           <Stack.Screen name="OnBoarding" component={OnboardingScreen} />
-=======
-          
->>>>>>> 5e2ff8d66fa4de97a8da08885ec443b0037c086d
         </>
       </Stack.Navigator>
     </NavigationContainer>
