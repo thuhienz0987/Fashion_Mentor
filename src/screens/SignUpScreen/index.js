@@ -275,11 +275,11 @@ const SignUpScreen = props => {
                     <View style={{flexDirection: 'row'}}>
                       <View style={styles.radioOption}>
                         <RadioButton value="Female" color={color.Black} />
-                        <Text>Female</Text>
+                        <Text style={{color: color.Black}}>Female</Text>
                       </View>
                       <View style={styles.radioOption}>
                         <RadioButton value="Male" color={color.Black} />
-                        <Text>Male</Text>
+                        <Text style={{color: color.Black}}>Male</Text>
                       </View>
                     </View>
                   </RadioButton.Group>
@@ -299,7 +299,7 @@ const SignUpScreen = props => {
                 <Text style={styles.textError}>{errorMessage}</Text>
               </View>
               {/* Add the "Sign up with" section here */}
-              {/* 
+              {/*
               <View style={styles.viewOther}>
                 <Text style={styles.textNormal}>Sign up with</Text>
                 <View style={styles.viewIcon}>

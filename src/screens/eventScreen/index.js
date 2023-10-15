@@ -14,11 +14,14 @@ import color from '../../constants/color';
 import scale from '../../constants/responsive';
 import {IC_Search, IC_Delete} from '../../assets/icons';
 import FrameEvent from './components/frameEvent';
-import {IMG_EventImage1} from '../../assets/images';
+import {IMG_EventImage1, IMG_HotNew1, IMG_HotNew2, IMG_HotNew3, IMG_HotNew4} from '../../assets/images';
 import {isPropertySignature} from 'typescript';
 import FrameCompetition from './components/frameCompetition';
+import BottomTab from '../../components/bottomTab';
+import { useNavigation } from '@react-navigation/native';
 
 const EventScreen = props => {
+  const navigation = useNavigation()
   const [isEventsSelected, setIsEventsSelected] = useState('Events');
   const [value, setValue] = useState('');
   const data = [
@@ -29,31 +32,31 @@ const EventScreen = props => {
       address: 'Thu Duc, HCM',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew3,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 10, 2023',
       address: 'Thu Duc, HCM',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew2,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 10, 2023',
       address: 'Thu Duc, HCM',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew4,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 10, 2023',
       address: 'Thu Duc, HCM',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew1,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 10, 2023',
       address: 'Thu Duc, HCM',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew3,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 10, 2023',
       address: 'Thu Duc, HCM',
@@ -67,27 +70,27 @@ const EventScreen = props => {
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew4,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew1,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew3,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew4,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_HotNew2,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
@@ -156,7 +159,7 @@ const EventScreen = props => {
                 eventName={item.eventName}
                 address={item.address}
                 date={item.date}
-                onPress={() => props.navigation.navigate('EventDetail')}
+                onPress={() => navigation.navigate('EventDetail')}
               />
             )}
           />
@@ -174,6 +177,7 @@ const EventScreen = props => {
           />
         )}
       </View>
+      <BottomTab></BottomTab>
     </SafeAreaView>
   );
 };

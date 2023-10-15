@@ -32,7 +32,7 @@ const BottomTab = () => {
       <TouchableOpacity onPress={() => navigation.navigate('Scan')}>
         <IC_Scan fill={'#F3F3F3'} />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Event')} >
         <IC_Event />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Profile')}>

@@ -7,13 +7,13 @@ import {
 } from 'react-native';
 import React from 'react';
 import color from '../../constants/color';
-import {IMG_InitImage} from '../../assets/images';
+import {IMG_InitImage, IMG_Inits} from '../../assets/images';
 import SubmitButton from '../../components/submitButton';
 import scale from '../../constants/responsive';
 const InitScreen = props => {
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground source={IMG_InitImage} style={styles.imageBackground}>
+      <ImageBackground source={IMG_Inits} style={styles.imageBackground}>
         <View style={styles.viewButton}>
           <View style={styles.button}>
             <SubmitButton
