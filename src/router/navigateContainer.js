@@ -10,6 +10,7 @@ import ScanScreen from '../screens/scanScreen';
 import BodyShapeScreen from '../screens/bodyShapeScreen';
 import PersonalColorScreen from '../screens/personalColor';
 import ProfileScreen from '../screens/profileScreen';
+import ExploreScreen from '../screens/exploreScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,10 @@ const MyNavigationContainer = () => {
 
           {/* profile */}
           <Stack.Screen name="Profile" component={ProfileScreen} />
+
+          {/* explore */}
+          <Stack.Screen name="Explore" component={ExploreScreen} />
+
         </>
       </Stack.Navigator>
     </NavigationContainer>

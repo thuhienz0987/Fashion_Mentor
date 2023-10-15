@@ -26,7 +26,7 @@ const BottomTab = () => {
         onPress={() => navigation.navigate('Home')}>
         <IC_Home />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Explore')}>
         <IC_Explore />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Scan')}>
