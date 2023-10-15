@@ -4,14 +4,11 @@ import MyNavigationContainer from './src/router/navigateContainer';
 import Header from './src/components/header';
 import HomeScreen from './src/screens/homeScreen';
 import {LogBox} from 'react-native';
-import Popup from './src/screens/scanScreen/component/popup';
-import ScanScreen from './src/screens/scanScreen';
-import BodyShapeScreen from './src/screens/bodyShapeScreen';
-import PersonalColorScreen from './src/screens/personalColor';
-import EditProfileScreen from './src/screens/editProfileScreen';
-import EditProfile from './src/screens/editProfileScreen';
 
 import OnboardingScreen from './src/screens/onboarding';
+import EventScreen from './src/screens/eventScreen';
+import EventDetailScreen from './src/screens/EventDetailScreen';
+import CompetitionDetailScreen from './src/screens/CompetitionDetailScreen';
 LogBox.ignoreAllLogs();
 const App = () => {
   return <MyNavigationContainer />;
