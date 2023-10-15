@@ -42,5 +42,13 @@ export {default as IMG_OutFit2} from './outFit2.png';
 export {default as IMG_OutFit3} from './outFit3.png';
 export {default as IMG_View} from './view.png';
 export {default as IMG_EventImage1} from './eventImage1.png';
+export {default as IMG_EventImage2} from './eventImage2.png';
+export {default as IMG_EventImage3} from './eventImage3.png';
+
 export {default as IMG_EventDetailedImage1} from './eventDetailedImage1.png';
 export {default as IMG_Map} from './map.png';
+
+export {default as IMG_Competition1} from './competition1.png';
+export {default as IMG_Competition2} from './competition2.png';
+export {default as IMG_Competition3} from './competition3.png';
+export {default as IMG_Competition4} from './competition4.png';

@@ -13,10 +13,12 @@ import color from '../../../constants/color';
 import {IMG_On1, IMG_On2, IMG_On3} from '../../../assets/images';
 import scale from '../../../constants/responsive';
 import SwiperFlatList from 'react-native-swiper-flatlist';
+import {useNavigation} from '@react-navigation/native';
 
 const {width: screenWidth} = Dimensions.get('window');
 
 const HotNew = () => {
+  const navigation = useNavigation();
   const views = [
     {
       source: IMG_On1,
@@ -52,7 +54,9 @@ const HotNew = () => {
               <ImageBackground source={item.source} style={styles.image}>
                 <Text style={styles.text}>{item.text}</Text>
                 <Text style={styles.subText}>{item.subText}</Text>
-                <TouchableOpacity style={styles.skip}>
+                <TouchableOpacity
+                  style={styles.skip}
+                  onPress={() => navigation.navigate('Init')}>
                   <Text style={styles.skipText}>Skip</Text>
                 </TouchableOpacity>
               </ImageBackground>
