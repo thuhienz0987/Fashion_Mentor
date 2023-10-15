@@ -14,7 +14,15 @@ import color from '../../constants/color';
 import scale from '../../constants/responsive';
 import {IC_Search, IC_Delete} from '../../assets/icons';
 import FrameEvent from './components/frameEvent';
-import {IMG_EventImage1} from '../../assets/images';
+import {
+  IMG_Competition1,
+  IMG_Competition2,
+  IMG_Competition3,
+  IMG_Competition4,
+  IMG_EventImage1,
+  IMG_EventImage2,
+  IMG_EventImage3,
+} from '../../assets/images';
 import {isPropertySignature} from 'typescript';
 import FrameCompetition from './components/frameCompetition';
 
@@ -29,8 +37,14 @@ const EventScreen = props => {
       address: 'Thu Duc, HCM',
     },
     {
-      image: IMG_EventImage1,
-      eventName: 'HANG UP HELP OUT 2022 STREET STORE',
+      image: IMG_EventImage2,
+      eventName: 'RECYCLE CLOTHES STREET STORE',
+      date: 'Oct 10, 2023',
+      address: 'Thu Duc, HCM',
+    },
+    {
+      image: IMG_EventImage3,
+      eventName: 'BRING FASHION EVERYWHERE',
       date: 'Oct 10, 2023',
       address: 'Thu Duc, HCM',
     },
@@ -41,20 +55,14 @@ const EventScreen = props => {
       address: 'Thu Duc, HCM',
     },
     {
-      image: IMG_EventImage1,
-      eventName: 'HANG UP HELP OUT 2022 STREET STORE',
+      image: IMG_EventImage2,
+      eventName: 'RECYCLE CLOTHES STREET STORE',
       date: 'Oct 10, 2023',
       address: 'Thu Duc, HCM',
     },
     {
-      image: IMG_EventImage1,
-      eventName: 'HANG UP HELP OUT 2022 STREET STORE',
-      date: 'Oct 10, 2023',
-      address: 'Thu Duc, HCM',
-    },
-    {
-      image: IMG_EventImage1,
-      eventName: 'HANG UP HELP OUT 2022 STREET STORE',
+      image: IMG_EventImage3,
+      eventName: 'BRING FASHION EVERYWHERE',
       date: 'Oct 10, 2023',
       address: 'Thu Duc, HCM',
     },
@@ -62,32 +70,32 @@ const EventScreen = props => {
 
   const data1 = [
     {
-      image: IMG_EventImage1,
+      image: IMG_Competition1,
       eventName: 'THROUGH BACK THE 60S ',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_Competition2,
+      eventName: 'VIET’S STYLE',
+      date: 'Oct 3, 2023 - Oct 10, 2023',
+    },
+    {
+      image: IMG_Competition3,
+      eventName: 'RECYCLE CLOTHES',
+      date: 'Oct 3, 2023 - Oct 10, 2023',
+    },
+    {
+      image: IMG_Competition4,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
     {
-      image: IMG_EventImage1,
+      image: IMG_Competition1,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
     {
-      image: IMG_EventImage1,
-      eventName: 'HANG UP HELP OUT 2022 STREET STORE',
-      date: 'Oct 3, 2023 - Oct 10, 2023',
-    },
-    {
-      image: IMG_EventImage1,
-      eventName: 'HANG UP HELP OUT 2022 STREET STORE',
-      date: 'Oct 3, 2023 - Oct 10, 2023',
-    },
-    {
-      image: IMG_EventImage1,
+      image: IMG_Competition2,
       eventName: 'HANG UP HELP OUT 2022 STREET STORE',
       date: 'Oct 3, 2023 - Oct 10, 2023',
     },
